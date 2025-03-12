@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -9,11 +10,25 @@ export default function Home() {
         <meta name="description" content="QA Engineer turned full-stack builder—exploring, learning, shipping anonymously." />
       </Head>
 
+      <header className={styles.header}>
+        <div className={styles.headerImage}>
+          <Image
+            src="/retrowave-header.jpg"
+            alt="Retrowave cityscape"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        </div>
+        <div className={styles.headerOverlay}>
+          <h1 className={styles.title}>QA Maverick</h1>
+          <p className={styles.description}>
+            From testing the limits to building the future—never stop, always ship.
+          </p>
+        </div>
+      </header>
+
       <main className={styles.main}>
-        <h1 className={styles.title}>QA Maverick</h1>
-        <p className={styles.description}>
-          From testing the limits to building the future—never stop, always ship.
-        </p>
         <div className={styles.grid}>
           <a href="https://proto-engine.onrender.com" className={styles.card}>
             <h2>Proto-Engine Risk Dash →</h2>
@@ -30,7 +45,7 @@ export default function Home() {
           <div className={styles.card}>
             <h2>Connect →</h2>
             <p>
-              <a href="mailto:willy.iglesias@gmail.com">Get Connected</a> |{' '}
+              <a href="mailto:willy.iglesias+github@gmail.com">Get Connected</a> |{' '}
               <a href="https://github.com/BCLion">GitHub</a>
             </p>
           </div>
