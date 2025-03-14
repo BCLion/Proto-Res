@@ -8,6 +8,7 @@ export default function Home() {
       <Head>
         <title>QA Maverick - Code Explorer</title>
         <meta name="description" content="QA Engineer turned full-stack builder—exploring, learning, shipping anonymously." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
       <header className={styles.header}>
