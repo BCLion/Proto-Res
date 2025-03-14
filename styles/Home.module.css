@@ -73,7 +73,9 @@
   flex-wrap: wrap;
   max-width: 800px;
   margin-top: 2rem;
-  width: 100%; /* Ensure full width on mobile */
+  width: 100%;
+  padding: 0; /* Reset padding for precise control */
+  box-sizing: border-box;
 }
 
 .card {
@@ -86,14 +88,14 @@
   border-radius: 10px;
   transition: all 0.3s ease;
   background: #1a1a2e;
-  min-width: 250px; /* Desktop minimum */
-  flex: 1 1 auto; /* Allow growth/shrink */
+  min-width: 250px;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   overflow: hidden;
-  box-sizing: border-box; /* Include padding/border in width */
+  box-sizing: border-box;
 }
 
 .card:hover,
@@ -162,16 +164,20 @@
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-    padding: 0 0.5rem; /* Add padding to grid for breathing room */
+    padding: 0; /* Remove padding to avoid extra width */
+    margin: 0 -0.5rem; /* Negative margin to pull cards left, compensating for padding */
   }
 
   .card {
     width: 100%;
-    min-width: 0; /* Remove min-width constraint on mobile */
+    min-width: 0;
     margin: 0.5rem 0;
-    padding: 1rem; /* Reduced padding */
-    box-sizing: border-box; /* Ensure padding/border fit within width */
-    max-width: 100vw; /* Cap at viewport width */
-    overflow: hidden; /* Force content to stay inside */
+    padding: 1rem;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow: hidden;
+    /* Adjust margin to pull left edge in */
+    margin-left: -0.5rem; /* Matches container padding to align left */
+    margin-right: 0; /* Reset right margin */
   }
 }
