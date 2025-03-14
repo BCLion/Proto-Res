@@ -1,4 +1,3 @@
-/* Existing styles unchanged, updating .intro and adding media query */
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -86,8 +85,9 @@
   border-radius: 10px;
   transition: all 0.3s ease;
   background: #1a1a2e;
-  width: 300px;
-  height: 200px;
+  /* Removed fixed width and height for flexibility */
+  min-width: 250px; /* Minimum width to ensure content fits */
+  flex: 1 1 auto; /* Allow cards to grow/shrink within grid */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -132,37 +132,41 @@
 }
 
 .intro p {
-  font-size: 1.3rem; /* Bumped from 1.25rem for emphasis */
+  font-size: 1.3rem;
   color: #b0b0b0;
   line-height: 1.5;
   text-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
 }
 
-/* Media query for mobile */
+/* Updated media query for mobile */
 @media (max-width: 600px) {
   .intro p {
-    font-size: 1.1rem; /* Smaller font for mobile */
-    padding: 0 0.5rem; /* Tighter padding for smaller screens */
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
   }
 
   .header {
-    height: 300px; /* Reduce header height for mobile */
+    height: 300px;
   }
 
   .title {
-    font-size: 3rem; /* Smaller title on mobile */
+    font-size: 3rem;
   }
 
   .description {
-    font-size: 1.2rem; /* Smaller tagline on mobile */
+    font-size: 1.2rem;
   }
 
   .grid {
-    flex-direction: column; /* Stack cards vertically on mobile */
+    flex-direction: column; /* Stacks cards vertically */
+    align-items: stretch; /* Ensures cards stretch to full width */
+    width: 100%; /* Full width on mobile */
   }
 
   .card {
-    width: 90%; /* Full-width cards on mobile */
-    height: auto; /* Let cards adjust height */
+    width: 100%; /* Full width on mobile */
+    min-width: 0; /* Overrides min-width for full flexibility */
+    margin: 0.5rem 0; /* Reduced margin for tighter stacking */
+    padding: 1rem; /* Slightly reduced padding for mobile */
   }
 }
