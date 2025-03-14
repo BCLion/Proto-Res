@@ -29,6 +29,13 @@ export default function Home() {
       </header>
 
       <main className={styles.main}>
+        {/* Add blurb section here */}
+        <section className={styles.intro}>
+          <p>
+            I’m a QA Engineer turned builder—using Python, Flask, and Selenium to automate and innovate. These projects showcase my journey from testing to creating impactful tools.
+          </p>
+        </section>
+
         <div className={styles.grid}>
           <a href="https://proto-engine.onrender.com" className={styles.card}>
             <h2>Proto-Engine Risk Dash →</h2>
