@@ -1,4 +1,4 @@
-/* Existing styles unchanged, adding new intro section */
+/* Existing styles unchanged, updating .intro and adding media query */
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -123,7 +123,7 @@
   -webkit-box-orient: vertical;
 }
 
-/* New intro section styling */
+/* Updated intro section styling */
 .intro {
   max-width: 800px;
   text-align: center;
@@ -132,8 +132,37 @@
 }
 
 .intro p {
-  font-size: 1.25rem;
+  font-size: 1.3rem; /* Bumped from 1.25rem for emphasis */
   color: #b0b0b0;
   line-height: 1.5;
   text-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
+}
+
+/* Media query for mobile */
+@media (max-width: 600px) {
+  .intro p {
+    font-size: 1.1rem; /* Smaller font for mobile */
+    padding: 0 0.5rem; /* Tighter padding for smaller screens */
+  }
+
+  .header {
+    height: 300px; /* Reduce header height for mobile */
+  }
+
+  .title {
+    font-size: 3rem; /* Smaller title on mobile */
+  }
+
+  .description {
+    font-size: 1.2rem; /* Smaller tagline on mobile */
+  }
+
+  .grid {
+    flex-direction: column; /* Stack cards vertically on mobile */
+  }
+
+  .card {
+    width: 90%; /* Full-width cards on mobile */
+    height: auto; /* Let cards adjust height */
+  }
 }
