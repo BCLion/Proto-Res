@@ -74,7 +74,7 @@
   max-width: 800px;
   margin-top: 2rem;
   width: 100%;
-  padding: 0; /* Reset padding for precise control */
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -110,9 +110,12 @@
   margin: 0 0 0.5rem 0;
   font-size: 1.5rem;
   color: #1e90ff;
-  white-space: nowrap;
+  /* Removed nowrap and ellipsis to allow wrapping */
   overflow: hidden;
+  /* Keep ellipsis for long single lines if desired, but allow wrap */
   text-overflow: ellipsis;
+  /* Optional: Add word-break for better wrapping */
+  word-break: break-word;
 }
 
 .card p {
@@ -164,20 +167,24 @@
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-    padding: 0; /* Remove padding to avoid extra width */
-    margin: 0 -0.5rem; /* Negative margin to pull cards left, compensating for padding */
+    padding: 0;
+    margin: 0 -0.5rem; /* Pull grid left to match container padding */
   }
 
   .card {
     width: 100%;
     min-width: 0;
     margin: 0.5rem 0;
-    padding: 1rem;
+    padding: 0.75rem; /* Reduced from 1rem to fit within viewport */
     box-sizing: border-box;
     max-width: 100vw;
     overflow: hidden;
-    /* Adjust margin to pull left edge in */
-    margin-left: -0.5rem; /* Matches container padding to align left */
-    margin-right: 0; /* Reset right margin */
+    margin-left: -0.25rem; /* Adjusted to account for border and padding */
+    margin-right: 0;
+  }
+
+  .card h2 {
+    font-size: 1.4rem; /* Reduced from 1.5rem for better mobile fit */
+    word-break: break-word; /* Ensure wrapping */
   }
 }
